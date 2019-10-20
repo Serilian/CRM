@@ -1,3 +1,5 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +10,10 @@
     <title>Spring Demo</title>
 </head>
 <body>
-Customers coming soon
+<ul>
+    <c:forEach items="${customers}" var="customer">
+        <li>${customer.firstName} ${customer.lastName} ${customer.email}</li>
+    </c:forEach>
+</ul>
 </body>
 </html>
