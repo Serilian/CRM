@@ -15,8 +15,9 @@
     <div id="header">
         <h2>CRM - List of customers</h2>
     </div>
-    <button class="add-button">Add Customer</button>
+
     <div id="container">
+        <button onclick="window.location.href='showFormForAdd'; return false;" class="add-button">Add Customer</button>
         <table id="content">
             <tr>
                 <th>First Name</th>
@@ -31,8 +32,6 @@
             </c:forEach>
         </table>
     </div>
-
-
 </div>
 
 

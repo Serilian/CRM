@@ -24,6 +24,11 @@ th {
 tr {
     border-top: 1px solid gray;
     text-align: center;
+
+}
+
+td {
+    padding: 3px;
 }
 
 tr:nth-child(even) {
@@ -58,7 +63,10 @@ tr:nth-child(odd) {
 
 #container {
     width: 100%;
-    margin: 0 auto
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #container h3 {
