@@ -11,9 +11,12 @@
 
 <div id="wrapper">
     <div id="header">
-        <h2>CRM - Add new customer</h2>
+        <h2>CRM - Add / Update new customer</h2>
     </div>
-    <form:form method="post" modelAttribute="newCustomer" action="saveCustomer">
+    <form:form method="post" modelAttribute="customer" action="saveCustomer">
+
+        <form:hidden path="id"/>
+
         <div class="inputGroup">
             <label for="fname">First Name</label>
             <form:input id="fname" type="text"  path="firstName"/>
