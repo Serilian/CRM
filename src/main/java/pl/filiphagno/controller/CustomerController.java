@@ -20,6 +20,9 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    public CustomerController() {
+    }
+
     @GetMapping("/list")
     public String demo(Model model) {
         List<Customer> customers = customerService.getCustomers();
