@@ -28,7 +28,12 @@ public class LoggingAspect {
     public void forAppFlow() {
     }
 
-    @Before("forAppFlow()")
+    @Pointcut("execution(* pl.filiphagno.api.*.*(..))")
+    public void restFlow() {
+
+    }
+
+    @Before("forAppFlow() || restFlow()")
     public void beforeMethod(JoinPoint joinpoint) {
         MethodSignature methodSignature = (MethodSignature) joinpoint.getSignature();
 
@@ -39,16 +44,12 @@ public class LoggingAspect {
         for(Object arg: args){
             log.info("with argument: {}", arg.toString());
         }
-
-
     }
 
-    @AfterReturning(pointcut = "forAppFlow()", returning = "result")
+    @AfterReturning(pointcut = "forAppFlow() || restFlow()", returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
 
         log.info("Returning from: {} with value {}", methodSignature, result);
     }
-
-
 }
